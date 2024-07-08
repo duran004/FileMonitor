@@ -1,0 +1,23 @@
+{
+    "name": "dcyilmaz/file-monitor",
+    "description": "You know if your project has been hacked by checking your files.",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": "^7.3|^8.0",
+        "laravel/framework": "^10.0|^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Dcyilmaz\\FileMonitor\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Duran Can YILMAZ",
+            "email": "duran4@rengaver.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
