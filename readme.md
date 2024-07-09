@@ -2,7 +2,7 @@
 
 [![Total Downloads](https://img.shields.io/packagist/dt/dcyilmaz/file-monitor.svg?style=flat-square)](https://packagist.org/packages/dcyilmaz/file-monitor)
 
-File Monitor is a Laravel package that allows you to monitor file changes within your application. It helps in keeping track of modifications, creations, and deletions of files and directories.
+File Monitor is a Laravel package that allows you to monitor file changes within your application. It helps in keeping track of modifications, creations of files and directories.
 
 ## Installation
 
