@@ -58,7 +58,7 @@ class MonitorFilesCommand extends Command
         $this->output->writeln("\nScan complete!");
     }
 
-    protected function warn($string, $color)
+    public function warn($string, $color)
     {
         $this->output->writeln("<fg=$color>$string</>");
     }
