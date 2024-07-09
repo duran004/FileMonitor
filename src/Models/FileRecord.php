@@ -1,6 +1,6 @@
 <?php
 
-namespace YourNamespace\FileMonitor\Models;
+namespace Dcyilmaz\FileMonitor\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

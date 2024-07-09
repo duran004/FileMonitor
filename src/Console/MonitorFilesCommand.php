@@ -1,9 +1,9 @@
 <?php
 
-namespace YourNamespace\FileMonitor\Console;
+namespace Dcyilmaz\FileMonitor\Console;
 
 use Illuminate\Console\Command;
-use YourNamespace\FileMonitor\Models\FileRecord;
+use Dcyilmaz\FileMonitor\Models\FileRecord;
 use Illuminate\Support\Facades\File;
 
 class MonitorFilesCommand extends Command
