@@ -12,6 +12,10 @@ You can install the package via Composer:
 ```bash
 composer require dcyilmaz/file-monitor
 ```
+### Register provider in bootstrap/providers.php
+```bash
+Dcyilmaz\FileMonitor\FileMonitorServiceProvider::class,
+```
 ### Install file_records table
 ```bash
 php artisan migrate
