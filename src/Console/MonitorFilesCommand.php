@@ -52,7 +52,7 @@ class MonitorFilesCommand extends Command
 
             $processedFiles++;
             $percentage = ($processedFiles / $totalFiles) * 100;
-            $this->output->write("\rLoading: " . number_format($percentage, 2) . "%", "yellow");
+            $this->output->write("\rLoading: " . number_format($percentage, 2) . "%");
         }
 
         $this->output->writeln("\nScan complete!");
