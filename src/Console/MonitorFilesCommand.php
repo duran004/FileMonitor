@@ -44,9 +44,9 @@ class MonitorFilesCommand extends Command
                 }
             } else {
                 if (!$existingFile) {
-                    $this->warn("New file detected: $filePath", "green");
+                    $this->warn("New file detected: $filePath");
                 } elseif ($existingFile->hash !== $hash) {
-                    $this->warn("File changed: $filePath", "red");
+                    $this->warn("File changed: $filePath");
                 }
             }
 
@@ -56,10 +56,5 @@ class MonitorFilesCommand extends Command
         }
 
         $this->output->writeln("\nScan complete!");
-    }
-
-    public function warn($string, $color)
-    {
-        $this->output->writeln("<fg=$color>$string</>");
     }
 }
