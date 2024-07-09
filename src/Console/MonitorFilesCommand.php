@@ -21,7 +21,7 @@ class MonitorFilesCommand extends Command
         $totalFiles = count($files);
         $processedFiles = 0;
 
-        $this->output->writeln("Total files: $totalFiles", "yellow");
+        $this->output->writeln("Total files: $totalFiles");
 
         foreach ($files as $file) {
             $filePath = $file->getRealPath();
