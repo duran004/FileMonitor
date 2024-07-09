@@ -1,9 +1,9 @@
 <?php
 
-namespace Dcyilmaz\FileMonitor\Console;
+namespace YourNamespace\FileMonitor\Console;
 
 use Illuminate\Console\Command;
-use Dcyilmaz\FileMonitor\Models\FileRecord;
+use YourNamespace\FileMonitor\Models\FileRecord;
 use Illuminate\Support\Facades\File;
 
 class MonitorFilesCommand extends Command
@@ -15,9 +15,13 @@ class MonitorFilesCommand extends Command
     {
         $isInitial = $this->option('init');
 
-        $allowedExtensions = ['php', 'html', 'js']; // Kontrol edilecek dosya türleri
+        $allowedExtensions = ['php', '.htaccess', 'js']; // Kontrol edilecek dosya türleri
 
         $files = File::allFiles(base_path());
+        $totalFiles = count($files);
+        $processedFiles = 0;
+
+        $this->output->writeln("Total files: $totalFiles", "yellow");
 
         foreach ($files as $file) {
             $filePath = $file->getRealPath();
@@ -40,11 +44,22 @@ class MonitorFilesCommand extends Command
                 }
             } else {
                 if (!$existingFile) {
-                    $this->warn("New file detected: $filePath");
+                    $this->warn("New file detected: $filePath", "green");
                 } elseif ($existingFile->hash !== $hash) {
-                    $this->warn("File changed: $filePath");
+                    $this->warn("File changed: $filePath", "red");
                 }
             }
+
+            $processedFiles++;
+            $percentage = ($processedFiles / $totalFiles) * 100;
+            $this->output->write("\rLoading: " . number_format($percentage, 2) . "%", "yellow");
         }
+
+        $this->output->writeln("\nScan complete!");
+    }
+
+    protected function warn($string, $color)
+    {
+        $this->output->writeln("<fg=$color>$string</>");
     }
 }
